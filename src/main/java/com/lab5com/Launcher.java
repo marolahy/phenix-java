@@ -19,13 +19,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.regex.Pattern;
 
-import static com.lab5com.util.PhenixConstant.THREAD_COUNT;
-import static com.lab5com.util.PhenixConstant.WORKERS;
-
 public class Launcher {
     private static final Logger logger = LogManager.getLogger(Launcher.class);
-    private static Map<String,List<Transaction>> transactionMap = Collections.synchronizedMap(new HashMap<>());
-    private static Map<String, List<Product>> productMap = Collections.synchronizedMap(new HashMap<>());
+    private List<String> transactionFileName = new ArrayList<>();
+    private List<String> referenceFileName = new ArrayList<>();
 
 
     private final static String  TRANSACTION_FILENAME_PATTERN = "^transactions\\_[0-9]{8}\\.data$";
@@ -52,6 +49,7 @@ public class Launcher {
         }
 
         logger.debug("Debut traitement");
+        var launcher = new  Launcher(args[0],args[1]);
         long start,end;
         start = System.currentTimeMillis();
         logger.debug("Debut de la principal tache");
@@ -61,118 +59,23 @@ public class Launcher {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for(var file : fileList){
-            var fileSplitter = new FileSplitter(file);
-            Map<String, File> tempFiles = fileSplitter.split();
-            var fileSorter = new FileSorter();
-            fileSorter.sort(new HashSet<>(tempFiles.values()));
-            Sorter sorter = new Sorter();
-            List<String> orderedFiles = sorter.sort(new LinkedList<>(tempFiles.keySet()));
-            orderedFiles = new FileMerger().doMerge(orderedFiles, fileSplitter.getSameFirstCharFilename());
-            List<File> files = getOrderedFileList(orderedFiles, tempFiles);
-            FileWriter fileWriter = new FileWriter();
-            fileWriter.mergeFiles(files,args[0]);
+        for(var f : fileList){
+                var file = new File(f);
+                var r = Pattern.compile(PRODUCT_FILENAME_PATTERN);
+                var m = r.matcher(file.getName());
+                if(m.find()){
+                    launcher.referenceFileName.add(f);
+                }
+                r = Pattern.compile(TRANSACTION_FILENAME_PATTERN);
+                m = r.matcher(file.getName());
+                if(m.find()){
+                    launcher.transactionFileName.add(f);
+                }
         }
+        for(var f : launcher.transactionFileName){
 
-
-        /*
-        for (int i = 1; i <= THREAD_COUNT; i++) {
-            var launcher = new Launcher(args[0],args[1]);
-            launcher.run();
         }
-        generateFile(new CalculationCaPerDays(Launcher.transactionMap ,Launcher.productMap ),args[1]);
-        generateFile(new CalculationCaPerShop(Launcher.transactionMap ,Launcher.productMap ),args[1]);
-        generateFile(new CalculationPerQuantityPerDays(Launcher.transactionMap ,Launcher.productMap ),args[1]);
-        generateFile(new CalculationPerQuantityShopPerDays(Launcher.transactionMap ,Launcher.productMap ),args[1]);
-        generateFile(new CalculationCaPerWeek(Launcher.transactionMap ,Launcher.productMap ),args[1]);
-        generateFile(new CalculationCaShopPerWeek(Launcher.transactionMap ,Launcher.productMap ),args[1]);
-        end = System.currentTimeMillis();
-        logger.debug("Principale tache complete en {} ms",  (end - start));*/
         logger.debug("Fin de traitement");
     }
-    protected static List<File> getOrderedFileList(List<String> filenames, Map<String, File> tempFiles) {
-        return filenames.stream().map(tempFiles::get).collect(Collectors.toCollection(() -> new LinkedList<>()));
-    }
 
-/*
-    public void run() throws IOException, InterruptedException {
-        try (Stream<Path> walk = Files.walk(Paths.get(inputDir))) {
-            fileList = walk.map(x -> x.toString()).collect(Collectors.toList());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        var threads = new ArrayList<Thread>(WORKERS);
-        for (int i = 0; i < WORKERS; i++) {
-            var processor = new Thread(this::processFiles);
-            processor.start();
-            threads.add(processor);
-        }
-        for (var processor : threads) {
-            processor.join();
-        }
-
-
-    }
-
-
-    private static void generateFile(Processor processor, String outputPath ) throws IOException {
-        for(var perDays : processor.process().entrySet()){
-            var filename = outputPath
-                    .concat(File.separator)
-                    .concat(perDays.getKey());
-            BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
-            writer.write(perDays.getValue());
-            writer.close();
-        }
-
-    }
-    private void processFiles() {
-        for(var f : fileList){
-            var file = new File(f);
-            var r = Pattern.compile(PRODUCT_FILENAME_PATTERN);
-            var m = r.matcher(file.getName());
-            if(m.find()){
-                var key =m.group(1);
-                productMap.put(key,Collections.synchronizedList(getProduct(f)));
-            }
-
-            r = Pattern.compile(TRANSACTION_FILENAME_PATTERN);
-            m = r.matcher(file.getName());
-            if(m.find()){
-                transactionMap.put(
-                        file.getName()
-                                .replaceAll("[^0-9]", "")
-                        , Collections.synchronizedList(getTransaction(f)));
-            }
-        }
-    }
-
-    private List<Product> getProduct(String file) {
-        List<Product> products = new ArrayList<>();
-        try (var b = Files.newBufferedReader(Path.of(file))) {
-            var readLine = "";
-            while ((readLine = b.readLine()) != null) {
-                var split = readLine.split("\\|");
-                products.add(Product.of(Long.valueOf(split[0]),Double.valueOf(split[1])));
-            }
-
-        } catch (IOException ignored) {
-        }
-        return products;
-    }
-    private List<Transaction> getTransaction(String file){
-        List<Transaction> transactions = new ArrayList<>();
-        try (var b = Files.newBufferedReader(Path.of(file))) {
-            var readLine = "";
-            while ((readLine = b.readLine()) != null) {
-                var split = readLine.split("\\|");
-                transactions.add(Transaction.of(split[0],split[1],split[2],split[3],split[4]));
-            }
-
-        } catch (IOException ignored) {
-        }
-        return transactions;
-
-    }
-*/
 }

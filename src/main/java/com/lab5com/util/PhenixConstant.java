@@ -6,13 +6,9 @@ public class PhenixConstant {
 
     public static final int WORKERS = 2;
 
-    public static final int BATCH_SIZE = 1000;
-
-    public static final String END_OF_QUEUE = "FIN_DE_TRAITEMENT";
-
     public static final String CARREFOUR_DATE_PATTERN = "yyyyMMdd";
 
     public static final int THREAD_COUNT = 20;
     public static final String TEMP_DIR = "c:\\temp\\";
-    public static final long MAX_TEMP_FILE_SIZE = 1024L;
+    public static final long MAX_TEMP_FILE_SIZE = 1024 * 1024 ;
 }

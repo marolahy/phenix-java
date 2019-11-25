@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74bd9bc0-97e8-44f9-a815-ebbb280aa170" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/AlphabeticalOrderValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileMerger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileMergerTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileSorter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileSorterTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileSplitter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileSplitterWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FutureHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/QueueHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/Sortable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/SortedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/Sorter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/util/PhenixConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/util/PhenixConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lab5com/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lab5com/Launcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lab5com/util/PhenixConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lab5com/util/PhenixConstant.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +90,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BufferedReaderWrapperTest">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -126,8 +144,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BufferedReaderWrapperTest" />
         <item itemvalue="Application.Launcher" />
+        <item itemvalue="JUnit.BufferedReaderWrapperTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
