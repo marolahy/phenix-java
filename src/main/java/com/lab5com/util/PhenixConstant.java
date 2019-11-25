@@ -13,4 +13,6 @@ public class PhenixConstant {
     public static final String CARREFOUR_DATE_PATTERN = "yyyyMMdd";
 
     public static final int THREAD_COUNT = 20;
+    public static final String TEMP_DIR = "c:\\temp\\";
+    public static final long MAX_TEMP_FILE_SIZE = 1024L;
 }
