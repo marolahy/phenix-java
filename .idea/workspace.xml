@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74bd9bc0-97e8-44f9-a815-ebbb280aa170" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileSplitterWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FutureHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/QueueHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/Sortable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/Splitter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/lab5com/file/SplitterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/AlphabeticalOrderValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileMerger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileMergerTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileSorter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileSorterTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileSplitter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileSplitterWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FutureHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/QueueHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/Sortable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/SortedList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/Sorter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/util/PhenixConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/util/PhenixConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lab5com/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lab5com/Launcher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lab5com/util/PhenixConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lab5com/util/PhenixConstant.class" afterDir="false" />
     </list>
@@ -35,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -90,7 +82,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="JUnit.SplitterTest">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -142,8 +134,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SplitterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phenix-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lab5com.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lab5com.file" />
+      <option name="MAIN_CLASS_NAME" value="com.lab5com.file.SplitterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SplitterTest" />
         <item itemvalue="Application.Launcher" />
         <item itemvalue="JUnit.BufferedReaderWrapperTest" />
         <item itemvalue="Application.Main" />
@@ -175,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574685841796</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="[ExternalSorting] Delete sample implement real algorithm">
+      <created>1574689099081</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574689099081</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +209,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[ExternalSorting] Ajout de traitement external sorting" />
     <MESSAGE value="[ExternalSorting] Debogage de merge and sort" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ExternalSorting] Debogage de merge and sort" />
+    <MESSAGE value="[ExternalSorting] Delete sample implement real algorithm" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ExternalSorting] Delete sample implement real algorithm" />
   </component>
 </project>
