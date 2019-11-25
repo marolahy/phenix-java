@@ -1,6 +1,5 @@
 package com.lab5com;
 
-import com.lab5com.file.*;
 import com.lab5com.model.Product;
 import com.lab5com.model.Transaction;
 import com.lab5com.processor.*;
@@ -9,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -34,6 +34,7 @@ public class Launcher {
 
     private final String inputDir;
     private final String outputDir;
+    private List<String> fileList = new ArrayList<>();
 
     public Launcher(String inputDir, String outputDir) {
         this.inputDir = inputDir;
@@ -55,27 +56,7 @@ public class Launcher {
         long start,end;
         start = System.currentTimeMillis();
         logger.debug("Debut de la principal tache");
-        List<String> fileList = new ArrayList<>();
-        try (Stream<Path> walk = Files.walk(Paths.get(args[0]))) {
-             fileList = walk.filter(x -> x.toString().endsWith(".data")).map(x -> x.toString()).collect(Collectors.toList());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        for(var file : fileList){
-            var fileSplitter = new FileSplitter(file);
-            Map<String, File> tempFiles = fileSplitter.split();
-            var fileSorter = new FileSorter();
-            fileSorter.sort(new HashSet<>(tempFiles.values()));
-            Sorter sorter = new Sorter();
-            List<String> orderedFiles = sorter.sort(new LinkedList<>(tempFiles.keySet()));
-            orderedFiles = new FileMerger().doMerge(orderedFiles, fileSplitter.getSameFirstCharFilename());
-            List<File> files = getOrderedFileList(orderedFiles, tempFiles);
-            FileWriter fileWriter = new FileWriter();
-            fileWriter.mergeFiles(files,args[0]);
-        }
-
-
-        /*
+        ;
         for (int i = 1; i <= THREAD_COUNT; i++) {
             var launcher = new Launcher(args[0],args[1]);
             launcher.run();
@@ -87,14 +68,10 @@ public class Launcher {
         generateFile(new CalculationCaPerWeek(Launcher.transactionMap ,Launcher.productMap ),args[1]);
         generateFile(new CalculationCaShopPerWeek(Launcher.transactionMap ,Launcher.productMap ),args[1]);
         end = System.currentTimeMillis();
-        logger.debug("Principale tache complete en {} ms",  (end - start));*/
+        logger.debug("Principale tache complete en {} ms",  (end - start));
         logger.debug("Fin de traitement");
     }
-    protected static List<File> getOrderedFileList(List<String> filenames, Map<String, File> tempFiles) {
-        return filenames.stream().map(tempFiles::get).collect(Collectors.toCollection(() -> new LinkedList<>()));
-    }
 
-/*
     public void run() throws IOException, InterruptedException {
         try (Stream<Path> walk = Files.walk(Paths.get(inputDir))) {
             fileList = walk.map(x -> x.toString()).collect(Collectors.toList());
@@ -113,8 +90,6 @@ public class Launcher {
 
 
     }
-
-
     private static void generateFile(Processor processor, String outputPath ) throws IOException {
         for(var perDays : processor.process().entrySet()){
             var filename = outputPath
@@ -174,5 +149,5 @@ public class Launcher {
         return transactions;
 
     }
-*/
+
 }
