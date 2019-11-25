@@ -11,6 +11,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 import java.util.Set;
@@ -26,7 +27,7 @@ class SplitterTest {
 
     @BeforeEach
     public void setUp() {
-        fileSplitter = new Splitter("test.txt","transition");
+        fileSplitter = new Splitter(TEMP_DIR + "test.txt","transition");
     }
 
     @AfterEach
@@ -61,13 +62,12 @@ class SplitterTest {
         assertThat(fileSplitter.getLinesQueue().size(), Is.is(0));
         assertThat(fileSplitter.isReaderDone(), Is.is(Boolean.TRUE));
         assertThat(tempFiles, IsNull.notNullValue());
-        assertThat(tempFiles.size(), Is.is(3));
-        assertThat(tempFiles.keySet(), CoreMatchers.hasItems("a", "ab", "ac"));
+        assertThat(tempFiles.size(), Is.is(1));
 
         Map<String, Set<File>> sameFirstCharFilename = fileSplitter.getSameFirstCharFilename();
         assertThat(sameFirstCharFilename.size(), Is.is(1));
         assertThat(sameFirstCharFilename.keySet(), CoreMatchers.hasItems("a"));
-        assertThat(sameFirstCharFilename.get("a").size(), Is.is(3));
+        assertThat(sameFirstCharFilename.get("a").size(), Is.is(1));
     }
 
     private void writeFile() {

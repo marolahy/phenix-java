@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74bd9bc0-97e8-44f9-a815-ebbb280aa170" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileSplitterWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FutureHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/QueueHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/Sortable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/Splitter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/lab5com/file/SplitterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lab5com/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lab5com/Launcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lab5com/util/PhenixConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lab5com/util/PhenixConstant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/lab5com/file/SplitterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lab5com/file/SplitterTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574689099081</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[ExternalSorting] Ajout test unitaire pour spliiter">
+      <created>1574691415415</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574691415415</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,6 +207,7 @@
     <MESSAGE value="[ExternalSorting] Ajout de traitement external sorting" />
     <MESSAGE value="[ExternalSorting] Debogage de merge and sort" />
     <MESSAGE value="[ExternalSorting] Delete sample implement real algorithm" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ExternalSorting] Delete sample implement real algorithm" />
+    <MESSAGE value="[ExternalSorting] Ajout test unitaire pour spliiter" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ExternalSorting] Ajout test unitaire pour spliiter" />
   </component>
 </project>
