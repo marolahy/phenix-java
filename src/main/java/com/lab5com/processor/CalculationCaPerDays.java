@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class CalculationCaPerDays  implements Processor{
+public class CalculationCaPerDays implements Processor {
     private static final Logger logger = LogManager.getLogger(CalculationCaPerDays.class);
     private final Map<String, List<Transaction>> transactionMap;
     private final Map<String, List<Product>> productMap;
@@ -20,29 +20,29 @@ public class CalculationCaPerDays  implements Processor{
     }
 
     @Override
-    public Map<String,String> process(){
-        Map<String,String> response = new HashMap<>();
-        for(var transaction: this.transactionMap.entrySet() ){
+    public Map<String, String> process() {
+        Map<String, String> response = new HashMap<>();
+        for (var transaction : this.transactionMap.entrySet()) {
             var date = transaction.getKey();
             var results = transaction
                     .getValue()
                     .stream()
-                    .map( t ->{
+                    .map(t -> {
                         var optionalProduct = productMap
                                 .get(t.getShop())
                                 .stream()
                                 .filter(prd -> prd.getId() == t.getProduct())
                                 .findFirst();
-                        if(optionalProduct.isPresent()){
+                        if (optionalProduct.isPresent()) {
                             var product = optionalProduct.get();
                             var result = new ResultCa();
                             result.setId(t.getProduct());
-                            result.setCa( product.getPrice() * t.getQuantity() );
+                            result.setCa(product.getPrice() * t.getQuantity());
                             return result;
                         }
                         return null;
                     })
-                    .filter(x -> x != null )
+                    .filter(x -> x != null)
                     .collect(Collectors.groupingBy(
                             resultCa -> resultCa.getId(),
                             Collectors.summingDouble(resultCa -> resultCa.getCa())
@@ -55,7 +55,7 @@ public class CalculationCaPerDays  implements Processor{
             var filename = "top_100_ca_GLOBAL_"
                     .concat(date)
                     .concat(".data");
-            response.put(filename,product_per_days);
+            response.put(filename, product_per_days);
         }
 
         return response;

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class CalculationPerQuantityShopPerDays implements Processor{
+public class CalculationPerQuantityShopPerDays implements Processor {
     private static final Logger logger = LogManager.getLogger(CalculationPerQuantityPerDays.class);
     private final Map<String, List<Transaction>> transactionMap;
     private final Map<String, List<Product>> productMap;
@@ -23,8 +23,8 @@ public class CalculationPerQuantityShopPerDays implements Processor{
 
     @Override
     public Map<String, String> process() {
-        Map<String,String> response = new HashMap<>();
-        for(var productPerShop : this.productMap.entrySet() ) {
+        Map<String, String> response = new HashMap<>();
+        for (var productPerShop : this.productMap.entrySet()) {
             var shop = productPerShop.getKey();
             for (var transaction : this.transactionMap.entrySet()) {
                 var date = transaction.getKey();

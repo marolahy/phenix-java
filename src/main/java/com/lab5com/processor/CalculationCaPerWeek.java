@@ -29,22 +29,22 @@ public class CalculationCaPerWeek implements Processor {
     public Map<String, String> process() {
         var results = transaction
                 .stream()
-                .map( t ->{
+                .map(t -> {
                     var optionalProduct = productMap
                             .get(t.getShop())
                             .stream()
                             .filter(prd -> prd.getId() == t.getProduct())
                             .findFirst();
-                    if(optionalProduct.isPresent()){
+                    if (optionalProduct.isPresent()) {
                         var product = optionalProduct.get();
                         var result = new ResultCa();
                         result.setId(t.getProduct());
-                        result.setCa( product.getPrice() * t.getQuantity() );
+                        result.setCa(product.getPrice() * t.getQuantity());
                         return result;
                     }
                     return null;
                 })
-                .filter(x -> x != null )
+                .filter(x -> x != null)
                 .collect(Collectors.groupingBy(
                         resultCa -> resultCa.getId(),
                         Collectors.summingDouble(resultCa -> resultCa.getCa())
@@ -59,8 +59,8 @@ public class CalculationCaPerWeek implements Processor {
         var filename = "top_100_ca_GLOBAL_"
                 .concat(new SimpleDateFormat(CARREFOUR_DATE_PATTERN).format(now))
                 .concat("-J7.data");
-        Map<String,String> response = new HashMap<>();
-        response.put(filename,product_per_days);
+        Map<String, String> response = new HashMap<>();
+        response.put(filename, product_per_days);
         return response;
     }
 }

@@ -29,11 +29,11 @@ public class CalculationCaShopPerWeek implements Processor {
     @Override
     public Map<String, String> process() {
         Map<String, String> response = new HashMap<>();
-        for(var productPerShop : this.productMap.entrySet() ) {
+        for (var productPerShop : this.productMap.entrySet()) {
             var shop = productPerShop.getKey();
             var results = transaction
                     .stream()
-                    .filter(t->t.getShop().equals(shop))
+                    .filter(t -> t.getShop().equals(shop))
                     .map(t -> {
                         var optionalProduct = productMap
                                 .get(t.getShop())
@@ -66,7 +66,7 @@ public class CalculationCaShopPerWeek implements Processor {
                     .concat("_")
                     .concat(new SimpleDateFormat(CARREFOUR_DATE_PATTERN).format(now))
                     .concat("-J7.data");
-            response.put(filename,product_per_days);
+            response.put(filename, product_per_days);
         }
         return response;
     }

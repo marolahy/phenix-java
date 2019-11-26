@@ -19,16 +19,13 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.regex.Pattern;
 
+import static com.lab5com.util.PhenixConstant.PRODUCT_FILENAME_PATTERN;
+import static com.lab5com.util.PhenixConstant.TRANSACTION_FILENAME_PATTERN;
+
 public class Launcher {
     private static final Logger logger = LogManager.getLogger(Launcher.class);
     private List<String> transactionFileName = new ArrayList<>();
-    private List<String> referenceFileName = new ArrayList<>();
-
-
-    private final static String  TRANSACTION_FILENAME_PATTERN = "^transactions\\_[0-9]{8}\\.data$";
-    private final static String PRODUCT_FILENAME_PATTERN = "^reference\\_prod\\-(.*)\\_[0-9]{8}\\.data$";
-
-
+    private List<String> shopIds = new ArrayList<>();
     private final String inputDir;
     private final String outputDir;
 
@@ -37,7 +34,9 @@ public class Launcher {
         this.outputDir = outputDir;
     }
 
-
+    public List<String> getShopIds() {
+        return shopIds;
+    }
 
     public static void main(String... args) throws IOException, InterruptedException, ParseException {
         if (args.length < 2) {
@@ -49,31 +48,30 @@ public class Launcher {
         }
 
         logger.debug("Debut traitement");
-        var launcher = new  Launcher(args[0],args[1]);
-        long start,end;
+        var launcher = new Launcher(args[0], args[1]);
+        long start, end;
         start = System.currentTimeMillis();
         logger.debug("Debut de la principal tache");
         List<String> fileList = new ArrayList<>();
         try (Stream<Path> walk = Files.walk(Paths.get(args[0]))) {
-             fileList = walk.filter(x -> x.toString().endsWith(".data")).map(x -> x.toString()).collect(Collectors.toList());
+            fileList = walk.filter(x -> x.toString().endsWith(".data")).map(x -> x.toString()).collect(Collectors.toList());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for(var f : fileList){
-                var file = new File(f);
-                var r = Pattern.compile(PRODUCT_FILENAME_PATTERN);
-                var m = r.matcher(file.getName());
-                if(m.find()){
-                    launcher.referenceFileName.add(f);
-                }
-                r = Pattern.compile(TRANSACTION_FILENAME_PATTERN);
-                m = r.matcher(file.getName());
-                if(m.find()){
-                    launcher.transactionFileName.add(f);
-                }
+        for (var f : fileList) {
+            var file = new File(f);
+            var r = Pattern.compile(PRODUCT_FILENAME_PATTERN);
+            var m = r.matcher(file.getName());
+            if (m.find()) {
+                var shopId = m.group(1);
+                launcher.shopIds.add(f);
+                continue;
+            }
+            launcher.transactionFileName.add(f);
         }
-        for(var f : launcher.transactionFileName){
-
+        for(var transaction : launcher.transactionFileName ){
+            var merger = new ProductTransactionFileMerge(transaction,launcher.shopIds);
+            merger.merge();
         }
         logger.debug("Fin de traitement");
     }

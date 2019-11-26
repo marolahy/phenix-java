@@ -2,7 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74bd9bc0-97e8-44f9-a815-ebbb280aa170" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/lab5com/file/SplitterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lab5com/file/SplitterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileMergeWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/ProductTransactionFileMerge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/BufferedReaderWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileSplitterWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FileWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FutureHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/FutureHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/QueueHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/file/QueueHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/Sortable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/file/Splitter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/model/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationCaPerDays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationCaPerDays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationCaPerShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationCaPerShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationCaPerWeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationCaPerWeek.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationCaShopPerWeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationCaShopPerWeek.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationPerQuantityPerDays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationPerQuantityPerDays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationPerQuantityShopPerDays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationPerQuantityShopPerDays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationQuantityPerWeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/CalculationQuantityPerWeek.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/processor/Processor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lab5com/util/PhenixConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lab5com/util/PhenixConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/lab5com/file/BufferedReaderWrapperTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/lab5com/file/SplitterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lab5com/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lab5com/Launcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lab5com/model/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lab5com/model/Transaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lab5com/processor/Processor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lab5com/processor/Processor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lab5com/util/PhenixConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lab5com/util/PhenixConstant.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +44,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -47,17 +76,17 @@
       <recent name="com.lab5com.file" />
       <recent name="com.lab5com.processor" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.lab5com.file" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.lab5com.processor" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\lab5com\projet\phenix-response\src\main\java\com\lab5com\model" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lab5com.processor" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.lab5com.file" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -72,7 +101,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SplitterTest">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -141,8 +170,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SplitterTest" />
         <item itemvalue="Application.Launcher" />
+        <item itemvalue="JUnit.SplitterTest" />
         <item itemvalue="JUnit.BufferedReaderWrapperTest" />
         <item itemvalue="Application.Main" />
       </list>
@@ -187,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574691415415</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[ExternalSorting] Correction et modification logique">
+      <created>1574691627526</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574691627526</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -208,6 +244,7 @@
     <MESSAGE value="[ExternalSorting] Debogage de merge and sort" />
     <MESSAGE value="[ExternalSorting] Delete sample implement real algorithm" />
     <MESSAGE value="[ExternalSorting] Ajout test unitaire pour spliiter" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ExternalSorting] Ajout test unitaire pour spliiter" />
+    <MESSAGE value="[ExternalSorting] Correction et modification logique" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ExternalSorting] Correction et modification logique" />
   </component>
 </project>

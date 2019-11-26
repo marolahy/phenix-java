@@ -10,6 +10,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.Callable;
 
+/**
+ * FileReader contains the logic to read each file line and add it to the Queue to be processed.
+ * Implements Callable to execute in parallel way.
+ */
 public class FileReader implements Callable<Boolean> {
     private QueueHandler fileHandler;
     private String filename;

@@ -50,11 +50,11 @@ public class Transaction {
     }
 
 
-
     public void setQuantity(long quantity) {
         this.quantity = quantity;
     }
-    public Transaction(){
+
+    public Transaction() {
 
     }
 
@@ -65,15 +65,16 @@ public class Transaction {
         this.product = product;
         this.quantity = quantity;
     }
-    public static Transaction of(String id, String sDate, String shop, String product, String quantity)  {
+
+    public static Transaction of(String id, String sDate, String shop, String product, String quantity) {
         Date date = null;
         try {
-            date = new SimpleDateFormat(CARREFOUR_DATE_PATTERN).parse(sDate.substring(0,8));
+            date = new SimpleDateFormat(CARREFOUR_DATE_PATTERN).parse(sDate.substring(0, 8));
         } catch (ParseException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
-        return new Transaction( Long.valueOf(id), date, shop, Long.valueOf(product), Long.valueOf(quantity));
+        return new Transaction(Long.valueOf(id), date, shop, Long.valueOf(product), Long.valueOf(quantity));
     }
 
 

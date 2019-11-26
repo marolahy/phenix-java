@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class CalculationPerQuantityPerDays implements Processor{
+public class CalculationPerQuantityPerDays implements Processor {
     private static final Logger logger = LogManager.getLogger(CalculationPerQuantityPerDays.class);
     private final Map<String, List<Transaction>> transactionMap;
     private final Map<String, List<Product>> productMap;
@@ -23,29 +23,29 @@ public class CalculationPerQuantityPerDays implements Processor{
     }
 
     @Override
-    public Map<String,String> process(){
-        Map<String,String> response = new HashMap<>();
-        for(var transaction: this.transactionMap.entrySet() ){
+    public Map<String, String> process() {
+        Map<String, String> response = new HashMap<>();
+        for (var transaction : this.transactionMap.entrySet()) {
             var date = transaction.getKey();
             var results = transaction
                     .getValue()
                     .stream()
-                    .map( t ->{
+                    .map(t -> {
                         var optionalProduct = productMap
                                 .get(t.getShop())
                                 .stream()
                                 .filter(prd -> prd.getId() == t.getProduct())
                                 .findFirst();
-                        if(optionalProduct.isPresent()){
+                        if (optionalProduct.isPresent()) {
                             var product = optionalProduct.get();
                             var resultQuantity = new ResultQuantity();
                             resultQuantity.setId(t.getProduct());
-                            resultQuantity.setQuantity( t.getQuantity() );
+                            resultQuantity.setQuantity(t.getQuantity());
                             return resultQuantity;
                         }
                         return null;
                     })
-                    .filter(x -> x != null )
+                    .filter(x -> x != null)
                     .collect(Collectors.groupingBy(
                             resultQuantity -> resultQuantity.getId(),
                             Collectors.summingLong(resultQuantity -> resultQuantity.getQuantity())
@@ -58,7 +58,7 @@ public class CalculationPerQuantityPerDays implements Processor{
             var filename = "top_100_ventes_GLOBAL_"
                     .concat(date)
                     .concat(".data");
-            response.put(filename,product_per_days);
+            response.put(filename, product_per_days);
         }
 
         return response;

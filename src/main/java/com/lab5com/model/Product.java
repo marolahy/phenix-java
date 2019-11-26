@@ -25,8 +25,8 @@ public class Product {
         this.price = price;
     }
 
-    public static Product of(long id, double price){
-        return new Product(id,price);
+    public static Product of(long id, double price) {
+        return new Product(id, price);
     }
 
     @Override
